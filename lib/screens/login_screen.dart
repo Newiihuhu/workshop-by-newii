@@ -68,6 +68,22 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: InputBorder.none),
             ),
           ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 10),
+            width: size.width * 0.8,
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("LOGIN",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+                  style: ElevatedButton.styleFrom(
+                      primary: primaryColor,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 20)),
+                )),
+          )
         ],
       ),
     );
