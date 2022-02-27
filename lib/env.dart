@@ -1,1 +1,1 @@
-String url = "http://api-workshops.herokuapp.com/api";
+String URL = "http://api-workshops.herokuapp.com/api";
