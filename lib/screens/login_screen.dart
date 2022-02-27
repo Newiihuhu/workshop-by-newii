@@ -20,13 +20,27 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<UserModel> login(String email, String password) async {
     this.user = await LoginService(email, password);
     if (user.email.isNotEmpty) {
+      print("pass");
     } else {
       showDialog(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              backgroundColor: Colors.grey.shade300,
               title: Text("ไม่สามารถเข้าสู่ระบบได้"),
               content: Text("กรุณาตรวจสอบข้อมูล"),
+              actions: <Widget>[
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(
+                      "ตกลง",
+                      style: TextStyle(color: lightColor),
+                    ))
+              ],
             );
           });
     }

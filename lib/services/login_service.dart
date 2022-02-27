@@ -11,9 +11,10 @@ Future<UserModel> LoginService(String email, String password) async {
   final response = await http.get(Uri.parse(url), headers: <String, String>{
     'Content-Type': 'application/json; charset=utf-8',
   });
-  if (response.statusCode == 200) {
-    return UserModel.fromJson(json.decode(response.body));
-  } else {
-    throw Exception('Failed to Login');
-  }
+  return UserModel.fromJson(json.decode(response.body));
+  // if (response.statusCode == 200) {
+  //   return UserModel.fromJson(json.decode(response.body));
+  // } else {
+  //   throw Exception('Failed to Login');
+  // }
 }
